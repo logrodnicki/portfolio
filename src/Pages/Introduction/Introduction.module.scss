@@ -1,5 +1,25 @@
 .wrapper {
   height: 100vh;
-  width: 100vw;
-  color: black;
+  @apply p-32;
+  @apply bg-stone-950;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @apply gap-2;
+}
+
+.mainText {
+  @apply text-custom-4 text-8xl;
+}
+
+.smallText {
+  @apply text-yellow-300 text-2xl;
 }

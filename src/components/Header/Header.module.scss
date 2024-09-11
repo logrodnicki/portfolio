@@ -1,0 +1,6 @@
+.wrapper {
+  @apply bg-gradient-to-r from-custom-3 to-custom-1 h-16 shadow-2xl shadow-gray-950;
+  @apply px-16 flex items-center justify-end gap-8;
+  @apply border-b-gray-950 border-b-2;
+  @apply sticky top-0;
+}

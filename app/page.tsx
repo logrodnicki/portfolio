@@ -1,12 +1,22 @@
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+'use client';
 
-const inter = Inter({ subsets: ['latin'] })
+import Introduction from '@/Pages/Introduction/Introduction';
+import Skills from '@/Pages/Skills/Skills';
+import Contact from '@/Pages/Contact/Contact';
+import { useRef } from 'react';
 
-export default function Home() {
+const Home = () => {
+  const pagesRef = useRef<HTMLDivElement>(null);
+
   return (
-    <main className={styles.main}>
-
+    <main>
+      <div ref={pagesRef}>
+        <Introduction />
+        <Skills />
+        <Contact />
+      </div>
     </main>
-  )
-}
+  );
+};
+
+export default Home;

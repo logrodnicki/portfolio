@@ -1,0 +1,33 @@
+.wrapper {
+  @apply bg-custom-3;
+  @apply rounded-2xl;
+  @apply flex items-center justify-center gap-2;
+  @apply w-56 h-56;
+  box-shadow: 10px 10px 17px 0 rgba(51, 28, 82, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.upperBox {
+  @apply rounded-2xl;
+  @apply flex items-center justify-center;
+  @apply w-56 h-56;
+  z-index: 1;
+  position: absolute;
+}
+
+.label {
+  @apply text-custom-4 text-2xl;
+}
+
+.hover {
+  transition: transform3d 150ms linear;
+  transform-style: preserve-3d;
+  color: var(--color);
+  transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+}
+
+.image {
+  @apply rounded-2xl;
+}

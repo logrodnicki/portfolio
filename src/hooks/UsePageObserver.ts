@@ -1,35 +1,38 @@
-import { useContext, useEffect } from 'react';
+import { RefObject, useContext, useEffect } from 'react';
 import PagesContext from '@/contexts/pagesContext';
 
 interface Props {
-  wrapperRef: HTMLDivElement;
+  wrapperRef: RefObject<HTMLDivElement>;
   pageNumber: number;
 }
 
-const PageObserverHook = ({ wrapperRef, pageNumber }: Props) => {
+const UsePageObserver = ({ wrapperRef, pageNumber }: Props) => {
   const { setActivePage } = useContext(PagesContext);
 
   useEffect(() => {
-    if (!wrapperRef) {
-      return;
+    if (!wrapperRef.current) {
+      return undefined;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActivePage(pageNumber);
-        }
-      });
-    }, {
-      threshold: 0.75,
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActivePage(pageNumber);
+          }
+        });
+      },
+      {
+        threshold: 0.75,
+      },
+    );
 
-    observer.observe(wrapperRef);
+    observer.observe(wrapperRef.current);
 
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [wrapperRef]);
 };
 
-export default PageObserverHook;
+export default UsePageObserver;
