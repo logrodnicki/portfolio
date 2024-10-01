@@ -5,10 +5,11 @@
 
 .dot {
   @apply w-4 h-4 rounded-full bg-custom-4;
+  @apply cursor-pointer;
 }
 
 .activeDot {
-  @apply w-4 h-4 rounded-full bg-custom-3 shadow-lg shadow-custom-3;
+  @apply w-5 h-5 rounded-full bg-custom-3 shadow-lg shadow-custom-3;
   @apply absolute top-4;
   transition: transform 1000ms ease-in-out, translate 500ms ease-in-out;
   z-index: 1;

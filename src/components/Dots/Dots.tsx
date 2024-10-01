@@ -12,7 +12,7 @@ const Dots = (): ReactElement => {
   const { activePage } = useContext(PagesContext);
 
   useEffect(() => {
-    setActiveDotTranslate(activePage * 104);
+    setActiveDotTranslate(activePage * 102);
 
     setActiveDotMoveClass('move');
     setTimeout(() => {

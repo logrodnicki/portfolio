@@ -1,9 +1,11 @@
 .wrapper {
   height: 100vh;
-  color: black;
   @apply bg-gradient-to-b from-custom-1 from-5% bg-stone-950;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
+  @apply flex justify-center items-center;
+  @apply p-16;
+}
+
+.list {
+  max-width: 1200px;
+  @apply flex gap-8 flex-wrap justify-center;
 }

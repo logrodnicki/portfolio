@@ -14,7 +14,7 @@ const Introduction = (): ReactElement => {
       <div className={styles.content}>
         <div className={styles.box}>
           <p className={styles.smallText}>Hello There!</p>
-          <p className={styles.mainText}>I am a frontend Developer</p>
+          <p className={styles.mainText}>I am a Frontend Developer</p>
         </div>
       </div>
     </div>
