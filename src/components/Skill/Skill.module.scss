@@ -23,8 +23,29 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //opacity: 0;
-  //animation: fadeOut 1000ms ease-in-out forwards;
+  opacity: 0;
+  animation: fadeOut 1000ms ease-in-out forwards;
+}
+
+.imageWrapper {
+  @apply h-32 w-32 flex justify-center items-center;
+  @apply rounded-2xl;
+}
+
+.label {
+  @apply text-custom-1 text-2xl;
+}
+
+.small {
+  @apply w-24 h-24;
+
+  .imageWrapper {
+    @apply h-16 w-16;
+  }
+
+  .label {
+    @apply text-xl;
+  }
 }
 
 .upperBox {
@@ -35,9 +56,7 @@
   position: absolute;
 }
 
-.label {
-  @apply text-custom-1 text-2xl;
-}
+
 
 .hover {
   transition: transform3d 50ms linear;
@@ -48,11 +67,6 @@
 
 .hoverClearing {
   transition-duration: 150ms;
-}
-
-.imageWrapper {
-  @apply h-32 w-32 flex justify-center items-center;
-  @apply rounded-2xl;
 }
 
 .imageBackground {

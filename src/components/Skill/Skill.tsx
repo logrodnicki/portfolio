@@ -1,39 +1,48 @@
 import { ReactElement, useRef, CSSProperties } from 'react';
 import cx from 'classnames';
 import Image from 'next/image';
-
+import { motion } from 'framer-motion';
 import useHoverAnimation from '@/hooks/UseHoverAnimation';
 
 import styles from './Skill.module.scss';
 
 interface Props {
-  label: string;
+  label?: string;
   logoSrc: string;
   addImageBackground?: boolean;
   index: number;
+  isSmall?: boolean;
 }
 
 const Skill = ({
-  label,
+  label = '',
   logoSrc,
   addImageBackground,
   index,
+  isSmall = false,
 }: Props): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const { xRotation, yRotation, isClearing } = useHoverAnimation({
     wrapperRef,
-    disabled: false,
+    disabled: true,
   });
 
   const imageSize = label ? 128 : 160;
 
   return (
-    <div ref={wrapperRef}>
-      <div className={styles.upperBox} />
+    <motion.div
+      ref={wrapperRef}
+      whileHover={{
+        scale: 1.1,
+        textShadow: '0px 0px 4px gray',
+      }}
+    >
+      <div className={cx(styles.upperBox, { [styles.small]: isSmall })} />
       <div
         className={cx(styles.wrapper, styles.hover, {
           [styles.hoverClearing]: isClearing,
+          [styles.small]: isSmall,
         })}
         style={
           {
@@ -58,7 +67,7 @@ const Skill = ({
         </div>
         {label ? <h3 className={styles.label}>{label}</h3> : null}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

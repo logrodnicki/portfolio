@@ -5,15 +5,13 @@
 }
 
 .content {
+  @apply w-full;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @apply gap-2;
+  @apply flex flex-col justify-center gap-16;
 }
 
 .mainText {

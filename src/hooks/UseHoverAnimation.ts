@@ -8,7 +8,7 @@ interface Props {
 const UseHoverAnimation = ({ wrapperRef, disabled }: Props) => {
   const [xRotation, setXRotation] = useState('0deg');
   const [yRotation, setYRotation] = useState('0deg');
-  const [isClearing] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
 
   const xRotationRef = useRef<string>('0deg');
   const yRotationRef = useRef<string>('0deg');
@@ -50,7 +50,7 @@ const UseHoverAnimation = ({ wrapperRef, disabled }: Props) => {
     const xPosition = calculatePosition(event.offsetX, halfWidth);
     const yPosition = calculatePosition(event.offsetY, halfHeight);
 
-    const max = 15;
+    const max = 30;
 
     xRotationRef.current = getRotation(
       event.offsetX,
@@ -107,6 +107,20 @@ const UseHoverAnimation = ({ wrapperRef, disabled }: Props) => {
 
       counter += 1;
     }, 50);
+
+    setIsClearing(true);
+
+    setTimeout(() => {
+      setXRotation('0deg');
+      setYRotation('0deg');
+    }, 150);
+
+    setTimeout(() => {
+      setIsClearing(false);
+    }, 2000);
+
+    // setXRotation('0deg');
+    // setYRotation('0deg');
   };
 
   useEffect(() => {
