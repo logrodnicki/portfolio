@@ -1,0 +1,51 @@
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.wrapper {
+  @apply flex flex-col gap-4 items-start;
+  @apply bg-custom-4 rounded-3xl;
+  @apply w-96 p-8;
+  opacity: 0;
+  transform: translateY(60px) scale(0.9);
+  height: fit-content;
+
+  &.show {
+    animation: show 1000ms ease-in-out forwards;
+  }
+}
+
+.name {
+  @apply text-4xl;
+}
+
+.date {
+  @apply text-slate-500 text-base;
+}
+
+.position {
+  @apply text-2xl text-custom-3;
+}
+
+@keyframes dutyMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.duty {
+  @apply text-xl;
+  @apply flex gap-4 items-center;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: dutyMove 300ms ease-in-out forwards;
+}

@@ -26,5 +26,6 @@ module.exports = {
     'arrow-body-style': ['error', 'always'],
     'object-curly-newline': 0,
     'react/require-default-props': 0,
+    'consistent-return': 0,
   },
 };

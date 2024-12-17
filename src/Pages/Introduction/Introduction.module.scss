@@ -20,4 +20,7 @@
 
 .smallText {
   @apply text-yellow-300 text-2xl;
+  background: linear-gradient(30deg, #c850c0, #ffcc70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

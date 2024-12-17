@@ -71,8 +71,4 @@ const Skill = ({
   );
 };
 
-Skill.defaultProps = {
-  addImageBackground: false,
-};
-
 export default Skill;

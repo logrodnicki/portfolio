@@ -1,4 +1,5 @@
 import { Skill } from '@/types/skills';
+import { IExperienceItem } from '@/types/experience';
 
 export const skills: Skill[] = [
   {
@@ -53,6 +54,35 @@ export const skills: Skill[] = [
     label: 'Tailwind',
     logoSrc: '/images/tailwind.png',
     id: crypto.randomUUID(),
+  },
+];
+
+export const experience: IExperienceItem[] = [
+  {
+    name: 'Enp',
+    position: 'Frontend developer',
+    startDate: '10-10-2022',
+    endDate: '10-10-2024',
+    duties: [
+      'Developing main online store',
+      'Implementing new features',
+      'Refactoring code',
+      'Writing documentations',
+      'Improving performance',
+    ],
+  },
+  {
+    name: 'FP',
+    position: 'Frontend developer',
+    startDate: '01-01-2020',
+    endDate: '01-01-2022',
+    duties: [
+      'Developing main online store',
+      'Implementing new features',
+      'Refactoring code',
+      'Writing documentations',
+      'Improving performance',
+    ],
   },
 ];
 

@@ -1,8 +1,8 @@
 'use client';
 
 import Introduction from '@/Pages/Introduction/Introduction';
-import Skills from '@/Pages/Skills/Skills';
 import Contact from '@/Pages/Contact/Contact';
+import Experience from '@/Pages/Experience/Experience';
 import { useRef } from 'react';
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
     <main>
       <div ref={pagesRef}>
         <Introduction />
-        <Skills />
+        <Experience />
         <Contact />
       </div>
     </main>
