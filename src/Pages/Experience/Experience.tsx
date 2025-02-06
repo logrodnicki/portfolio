@@ -3,7 +3,7 @@ import ExperienceItem from '@/components/ExperienceItem/ExperienceItem';
 import { experience } from '@/data/data';
 import usePageObserver from '@/hooks/UsePageObserver';
 import Title from '@/components/Title/Title';
-import ExperienceTimeline from '@/components/ExperieceTimeline/ExperienceTimeline';
+import ExperienceTimeline from '@/components/ExperienceTimeline/ExperienceTimeline';
 import styles from './Experience.module.scss';
 
 const Experience = (): ReactElement => {

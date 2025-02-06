@@ -1,4 +1,6 @@
+@reference "../../../app/globals.css";
+
 .wrapper {
-  @apply bg-gradient-to-br from-custom-5 bg-stone-950 to-95%;
+  @apply bg-linear-to-bl from-violet-500 to-fuchsia-500;
   @apply w-full p-16;
 }
