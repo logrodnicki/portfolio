@@ -1,0 +1,55 @@
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5) translate3d(0, 0, 16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+.wrapper {
+  @apply flex-grow flex justify-center;
+}
+
+.fullWidth {
+  @apply w-full;
+}
+
+.content {
+  @apply flex gap-4 items-center;
+}
+
+.rotateLeft {
+  @apply flex-row-reverse;
+}
+
+.rotateDown {
+  @apply flex-col
+}
+
+.dot {
+  @apply h-2 w-2 rounded-full;
+  @apply bg-custom-4;
+}
+
+.rotateArrowDown {
+  transform: rotate(90deg);
+}
+
+.dot,
+.arrow {
+  @apply opacity-0;
+}
+
+.show {
+  //transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  animation: show 1500ms ease-in-out forwards;
+}

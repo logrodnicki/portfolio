@@ -1,0 +1,42 @@
+@keyframes showDot {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes showLine {
+  to {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  @apply flex flex-col items-center;
+  @apply w-32;
+  @apply relative;
+}
+
+.dot {
+  @apply w-5 h-5 rounded-full;
+  @apply bg-yellow-400;
+  @apply absolute top-16 z-10;
+  @apply shadow-yellow-200;
+  @apply opacity-0;
+  box-shadow: 0 0 3px 3px var(--tw-shadow-color);
+  transform: translateY(-4rem);
+
+  &.showDot {
+    animation: showDot 1000ms ease-in-out forwards;
+  }
+}
+
+.line {
+  @apply w-0.5 h-full;
+  @apply bg-gradient-to-t from-custom-3 via-fuchsia-500 to-custom-3;
+  @apply opacity-0;
+
+  &.showLine {
+    animation: showLine 1000ms ease-in-out forwards;
+  }
+}

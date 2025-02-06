@@ -1,8 +1,13 @@
 .wrapper {
-  @apply bg-gradient-to-b from-custom-1 from-5% bg-stone-950;
-  @apply flex gap-16;
-  @apply w-full p-16;
+  @apply bg-gradient-to-br from-custom-5 bg-stone-950 to-95%;
+  @apply w-full py-16 px-32;
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.list {
+  @apply flex flex-wrap;
+}
+
+.row {
+  @apply flex flex-row gap-8;
 }

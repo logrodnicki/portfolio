@@ -1,5 +1,4 @@
 .wrapper {
-  height: 100vh;
-  background-color: red;
-  color: black;
+  @apply bg-gradient-to-br from-custom-5 bg-stone-950 to-95%;
+  @apply w-full p-16;
 }

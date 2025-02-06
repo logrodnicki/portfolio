@@ -16,28 +16,31 @@ const Company = ({
   wrapperClass = '',
   isVisible,
 }: Props): ReactElement => {
-  const classes = cx(styles.wrapper, wrapperClass, {
+  const wrapperClasses = cx(styles.wrapper, wrapperClass, {
     [styles.show]: isVisible,
   });
   return (
-    <div className={classes}>
-      <h3 className={styles.name}>{name}</h3>
-      <p className={styles.position}>{position}</p>
-      <p className={styles.date}>{`${startDate} - ${endDate}`}</p>
-      <ul>
-        {duties.map((duty, index) => {
-          return (
-            <li
-              className={styles.duty}
-              key={duty}
-              style={{ animationDelay: `${index * 300}ms` }}
-            >
-              <GoDotFill />
-              <span>{duty}</span>
-            </li>
-          );
-        })}
-      </ul>
+    <div className={wrapperClasses}>
+      <div className={styles.background} />
+      <div className={styles.content}>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.position}>{position}</p>
+        <p className={styles.date}>{`${startDate} - ${endDate}`}</p>
+        <ul>
+          {duties.map((duty, index) => {
+            return (
+              <li
+                className={styles.duty}
+                key={duty}
+                style={{ animationDelay: `${index * 300}ms` }}
+              >
+                <GoDotFill className={styles.listIcon} size={12} />
+                <span>{duty}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

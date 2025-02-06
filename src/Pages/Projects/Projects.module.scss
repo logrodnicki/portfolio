@@ -1,0 +1,11 @@
+.wrapper {
+  @apply w-full p-16;
+  @apply bg-gradient-to-b from-custom-1 from-5% bg-stone-950;
+  @apply w-full py-16 px-32;
+  min-height: 100vh;
+}
+
+.projects {
+  @apply grid gap-8;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+}

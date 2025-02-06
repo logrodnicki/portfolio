@@ -1,0 +1,55 @@
+.wrapper {
+  @apply rounded-2xl;
+  @apply bg-custom-2;
+  padding: 1px;
+  height: fit-content;
+  @apply relative;
+}
+
+.background {
+  @apply absolute inset-0;
+  --gradient: linear-gradient(to bottom right, #8121d0 0%, rgb(168 85 247) 34%, #dccfed 68%, rgb(217 70 239));
+  --bg-size: calc(100% + 14px);
+
+  &::after {
+    content: "";
+    border: 2px solid rgba(0, 0, 0, 0);
+    mask: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0)), linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 100%));
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+    position: absolute;
+    inset: 0;
+    background: var(--gradient) 50% / calc(100% + 14px) calc(100% + 14px);
+    @apply rounded-3xl;
+  }
+}
+
+.content {
+  @apply flex flex-col gap-8 p-8;
+  @apply rounded-2xl;
+  @apply bg-gradient-to-br from-stone-950 from-15% bg-custom-5 to-85%;
+}
+
+.name {
+  @apply text-3xl text-custom-4;
+}
+
+.technologies {
+  @apply flex gap-2 flex-wrap;
+}
+
+.technology {
+  @apply flex gap-2 items-center;
+  @apply py-2 px-4 rounded-xl;
+  @apply bg-stone-950;
+  @apply border border-custom-2;
+}
+
+.technologyName {
+  @apply text-base text-custom-4;
+}
+
+.technologyImage {
+  @apply w-4 h-4 rounded-b-md;
+}
+

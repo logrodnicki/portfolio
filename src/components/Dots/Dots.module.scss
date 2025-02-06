@@ -1,5 +1,5 @@
 .wrapper {
-  @apply w-8 bg-custom-1 rounded-2xl fixed top-0 right-4 translate-y-2/4 py-4;
+  @apply w-8 bg-purple-400 bg-opacity-80 rounded-2xl fixed top-0 right-4 translate-y-2/4 py-2;
   @apply flex justify-center items-center flex-col gap-3;
 }
 
@@ -9,8 +9,8 @@
 }
 
 .activeDot {
-  @apply w-5 h-5 rounded-full bg-custom-3 shadow-lg shadow-custom-3;
-  @apply absolute top-4;
+  @apply w-4 h-4 rounded-full bg-custom-1;
+  @apply absolute top-2;
   transition: transform 1000ms ease-in-out, translate 500ms ease-in-out;
   z-index: 1;
 }

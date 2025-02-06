@@ -6,20 +6,44 @@
 }
 
 .wrapper {
-  @apply flex flex-col gap-4 items-start;
-  @apply bg-custom-4 rounded-3xl;
-  @apply w-96 p-8;
-  opacity: 0;
+  @apply w-96 rounded-3xl;
+  @apply opacity-0;
+  @apply relative;
+  padding: 1px;
   transform: translateY(60px) scale(0.9);
-  height: fit-content;
 
   &.show {
     animation: show 1000ms ease-in-out forwards;
   }
 }
 
+.background {
+  @apply absolute inset-0;
+  --gradient: linear-gradient(to bottom right, rgb(115, 115, 115) 0%, rgb(82, 82, 82) 34%, rgb(72, 72, 72) 68%, rgb(64, 64, 64));
+  --bg-size: calc(100% + 14px);
+
+  &::after {
+    content: "";
+    border: 3px solid rgba(0, 0, 0, 0);
+    mask: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0)), linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 100%));
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+    position: absolute;
+    inset: 0;
+    background: var(--gradient) 50% / calc(100% + 14px) calc(100% + 14px);
+    @apply rounded-3xl;
+  }
+}
+
+.content {
+  @apply flex flex-col gap-4 items-start;
+  @apply bg-stone-950 rounded-3xl;
+  @apply p-8;
+  height: fit-content;
+}
+
 .name {
-  @apply text-4xl;
+  @apply text-2xl text-custom-4;
 }
 
 .date {
@@ -27,7 +51,7 @@
 }
 
 .position {
-  @apply text-2xl text-custom-3;
+  @apply text-xl text-custom-3;
 }
 
 @keyframes dutyMove {
@@ -43,9 +67,13 @@
 }
 
 .duty {
-  @apply text-xl;
-  @apply flex gap-4 items-center;
+  @apply text-lg text-custom-4;
+  @apply flex gap-4 items-baseline;
   opacity: 0;
   transform: translateX(-10px);
   animation: dutyMove 300ms ease-in-out forwards;
+}
+
+.listIcon {
+  @apply w-3 min-w-3;
 }
