@@ -4,7 +4,7 @@ import Introduction from '@/Pages/Introduction/Introduction';
 import Contact from '@/Pages/Contact/Contact';
 import Experience from '@/Pages/Experience/Experience';
 import Projects from '@/Pages/Projects/Projects';
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 const Home = () => {
   // const [pagesPositions, setPagesPositions] = useState([]);
@@ -62,13 +62,13 @@ const Home = () => {
   //   return map;
   // }, []);
 
-  useEffect(() => {
-    window.addEventListener('scroll', onScrollHandler);
-
-    return () => {
-      window.removeEventListener('scroll', onScrollHandler);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', onScrollHandler);
+  //
+  //   return () => {
+  //     window.removeEventListener('scroll', onScrollHandler);
+  //   };
+  // }, []);
 
   return (
     <main>

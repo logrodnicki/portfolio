@@ -135,7 +135,8 @@ export const experience: IExperienceItem[] = [
 
 export const projects: IProject[] = [
   {
-    name: 'Media Expert - Online Store',
+    name: 'Media Expert',
+    description: 'Online store',
     technologies: [
       {
         name: 'Vue',
@@ -161,8 +162,8 @@ export const projects: IProject[] = [
     ],
   },
   {
-    name: 'Blis - Marketing data visualization',
-    description: '',
+    name: 'Blis',
+    description: 'Marketing data visualization',
     technologies: [
       {
         name: 'React',
@@ -179,8 +180,8 @@ export const projects: IProject[] = [
     ],
   },
   {
-    name: 'Ordering stack - online orders application',
-    description: '',
+    name: 'Ordering stack',
+    description: 'Application for restaurant orders',
     technologies: [
       {
         name: 'React',
@@ -222,7 +223,8 @@ export const projects: IProject[] = [
     ],
   },
   {
-    name: 'Piotr i Paweł - Online store',
+    name: 'Piotr i Paweł',
+    description: 'Online store',
     technologies: [
       {
         name: 'Vue',
