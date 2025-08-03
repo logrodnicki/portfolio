@@ -1,14 +1,14 @@
 import { ReactElement } from 'react';
-import Button from '@/components/Header/Button/Button';
-
+import HeaderButton from '@/components/HeaderButton/HeaderButton';
 import styles from './Header.module.scss';
 
 const Header = (): ReactElement => {
   return (
     <nav className={styles.wrapper}>
-      <Button text="Home" />
-      <Button text="Skills" />
-      <Button text="Contact" />
+      <HeaderButton text="Home" href="#home" />
+      <HeaderButton text="Experience" href="#experience" />
+      <HeaderButton text="Projects" href="#projects" />
+      <HeaderButton text="Contact" href="#contact" />
     </nav>
   );
 };

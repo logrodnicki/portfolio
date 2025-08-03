@@ -3,7 +3,7 @@ import styles from './Contact.module.scss';
 
 const Contact = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-page-hash="#contact">
       <Title text="Contact" />
     </div>
   );

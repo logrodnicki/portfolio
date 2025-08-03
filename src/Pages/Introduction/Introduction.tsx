@@ -1,6 +1,5 @@
 import { ReactElement, useRef } from 'react';
 import cx from 'classnames';
-import usePageObserver from '@/hooks/UsePageObserver';
 import SkillsList from '@/components/SkillsList/SkillsList';
 
 import styles from './Introduction.module.scss';
@@ -8,10 +7,19 @@ import styles from './Introduction.module.scss';
 const Introduction = (): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  usePageObserver({ wrapperRef, pageNumber: 0 });
+  // usePageObserver({ wrapperRef, pageHash: '#home' });
+
+  // useEffect(() => {
+  //   console.log('INTRODUCTION EFFECT');
+  //   console.log(wrapperRef);
+  // }, []);
 
   return (
-    <div className={cx(styles.wrapper)} ref={wrapperRef}>
+    <div
+      className={cx(styles.wrapper)}
+      ref={wrapperRef}
+      data-page-hash="#introduction"
+    >
       <div className={styles.content}>
         <div className={styles.box}>
           <div>

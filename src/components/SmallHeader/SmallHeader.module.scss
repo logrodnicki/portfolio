@@ -1,0 +1,31 @@
+@reference "../../../app/globals.css";
+
+@keyframes show {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  @apply fixed top-2 w-full z-50;
+  @apply flex justify-center opacity-0;
+  transform: translateY(-130%);
+  animation: show linear forwards;
+  animation-timeline: scroll();
+  animation-range: 100px 250px;
+}
+
+.container {
+  @apply rounded-4xl h-16;
+  @apply relative;
+}
+
+.background {
+  @apply bg-linear-to-bl from-violet-500 to-fuchsia-500 opacity-90;
+  @apply w-full h-full rounded-4xl absolute;
+}
+
+.content {
+  @apply p-4 w-min flex gap-4 rounded-4xl justify-center;
+}

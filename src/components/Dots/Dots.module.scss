@@ -1,7 +1,9 @@
 @reference "../../../app/globals.css";
 
 .wrapper {
-  @apply w-8 bg-purple-400 opacity-80 rounded-2xl fixed top-0 right-4 translate-y-2/4 py-2;
+  //@apply w-8 bg-purple-400 opacity-80 rounded-2xl fixed top-0 right-4 translate-y-2/4 py-2;
+  @apply w-8 opacity-80 rounded-2xl fixed top-0 right-4 translate-y-2/4 py-2;
+  @apply bg-linear-to-bl from-violet-500 to-fuchsia-500;
   @apply flex justify-center items-center flex-col gap-3;
 }
 

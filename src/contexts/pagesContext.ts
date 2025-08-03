@@ -1,12 +1,12 @@
 import React, { createContext } from 'react';
 
 interface PagesContextValue {
-  activePage: number;
-  setActivePage: React.Dispatch<React.SetStateAction<number>>;
+  activePage: string;
+  setActivePage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const PagesContext = createContext<PagesContextValue>({
-  activePage: 0,
+  activePage: '#home',
   setActivePage: () => {},
 });
 

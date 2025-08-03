@@ -1,13 +1,14 @@
 @reference "../../../app/globals.css";
 
 .wrapper {
-  @apply bg-gradient-to-br from-custom-5 bg-stone-950 to-95%;
+  //@apply bg-gradient from-stone-950 via-stone-900 bg-stone-950;
+  @apply bg-linear-to-t from-stone-950 via-custom-5 bg-stone-950;
   @apply w-full py-16 px-32;
   min-height: 100vh;
 }
 
 .list {
-  @apply flex flex-wrap;
+  @apply flex flex-col items-center;
 }
 
 .row {

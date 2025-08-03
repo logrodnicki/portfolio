@@ -1,8 +1,18 @@
 @reference "../../../app/globals.css";
 
+@keyframes hide {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 .wrapper {
   @apply bg-gradient-to-r from-custom-3 to-custom-1 h-16 shadow-2xl shadow-gray-950;
-  @apply px-16 flex items-center justify-end gap-8;
+  @apply px-16 flex items-center justify-center gap-8;
   @apply border-b-gray-950 border-b-2;
   @apply sticky top-0 z-50;
+  animation: hide linear forwards;
+  animation-timeline: scroll();
+  animation-range: 100px 150px;
 }

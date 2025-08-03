@@ -1,18 +1,18 @@
 import { projects } from '@/data/data';
 import Project from '@/components/Project/Project';
 import { useRef } from 'react';
-import usePageObserver from '@/hooks/UsePageObserver';
 import Title from '@/components/Title/Title';
 import styles from './Projects.module.scss';
 
 const Projects = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  usePageObserver({ wrapperRef, pageNumber: 2 });
+  // usePageObserver({ wrapperRef, pageHash: '#projects' });
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
+    <div className={styles.wrapper} ref={wrapperRef} data-page-hash="#projects">
       <Title text="Projects" />
+      <div />
       <div className={styles.projects}>
         {projects.map((project) => {
           return <Project key={project.name} project={project} />;

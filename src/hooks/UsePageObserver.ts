@@ -1,13 +1,15 @@
 import { RefObject, useContext, useEffect } from 'react';
 import PagesContext from '@/contexts/pagesContext';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   wrapperRef: RefObject<HTMLDivElement>;
-  pageNumber: number;
+  pageHash: string;
 }
 
-const UsePageObserver = ({ wrapperRef, pageNumber }: Props) => {
+const UsePageObserver = ({ wrapperRef, pageHash }: Props) => {
   const { setActivePage } = useContext(PagesContext);
+  const { replace } = useRouter();
 
   useEffect(() => {
     if (!wrapperRef.current) {
@@ -18,12 +20,13 @@ const UsePageObserver = ({ wrapperRef, pageNumber }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActivePage(pageNumber);
+            setActivePage(pageHash);
+            replace(pageHash, { scroll: false });
           }
         });
       },
       {
-        threshold: 0.75,
+        threshold: 0.5,
       },
     );
 
