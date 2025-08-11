@@ -18,7 +18,10 @@ const Introduction = (): ReactElement => {
         <div className={styles.box}>
           <div>
             <p className={styles.smallText}>Hello There!</p>
-            <AnimatedFadeText text="I am a Frontend Developer" classes={styles.mainText} />
+            <AnimatedFadeText
+              text="I am a Frontend Developer"
+              classes={styles.mainText}
+            />
           </div>
 
           <SkillsList initDelay={1000} />

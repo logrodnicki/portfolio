@@ -50,7 +50,7 @@ const Skill = ({
           {
             '--rotateX': xRotation,
             '--rotateY': yRotation,
-            'animation-delay': `${(index * 100) + initDelay}ms`,
+            'animation-delay': `${index * 100 + initDelay}ms`,
           } as CSSProperties
         }
       >

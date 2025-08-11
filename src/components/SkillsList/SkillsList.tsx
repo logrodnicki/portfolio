@@ -6,7 +6,7 @@ import { skills } from '@/data/data';
 import styles from './SkillsList.module.scss';
 
 interface Props {
-  initDelay?: number
+  initDelay?: number;
 }
 
 const SkillsList = ({ initDelay = 0 }: Props): ReactElement => {
@@ -15,7 +15,15 @@ const SkillsList = ({ initDelay = 0 }: Props): ReactElement => {
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       {skills.map(({ id, logoSrc }, index) => {
-        return <Skill key={id} logoSrc={logoSrc} index={index} initDelay={initDelay} isSmall />;
+        return (
+          <Skill
+            key={id}
+            logoSrc={logoSrc}
+            index={index}
+            initDelay={initDelay}
+            isSmall
+          />
+        );
       })}
     </div>
   );

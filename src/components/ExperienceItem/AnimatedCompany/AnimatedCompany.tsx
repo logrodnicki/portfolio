@@ -34,7 +34,9 @@ const AnimatedCompany = ({
               <li
                 className={styles.duty}
                 key={duty}
-                style={{ animationDelay: `${(index * 300) + initDutyAnimationDelay}ms` }}
+                style={{
+                  animationDelay: `${index * 300 + initDutyAnimationDelay}ms`,
+                }}
               >
                 <GoDotFill className={styles.listIcon} size={12} />
                 <span>{duty}</span>

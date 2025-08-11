@@ -10,11 +10,13 @@ interface Props {
 const AnimatedFadeText = ({ text, classes = '', delay = 50 }: Props) => {
   const splitText = text.split('');
 
-  const getKey = (letter: string, index: number) => { return `${letter}-${index}`; };
+  const getKey = (letter: string, index: number) => {
+    return `${letter}-${index}`;
+  };
 
   return (
     <>
-      { splitText.map((letter, index) => {
+      {splitText.map((letter, index) => {
         return (
           <span
             key={getKey(letter, index)}
@@ -24,7 +26,7 @@ const AnimatedFadeText = ({ text, classes = '', delay = 50 }: Props) => {
             {letter}
           </span>
         );
-      }) }
+      })}
     </>
   );
 };
