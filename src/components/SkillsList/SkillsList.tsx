@@ -5,13 +5,17 @@ import { skills } from '@/data/data';
 
 import styles from './SkillsList.module.scss';
 
-const SkillsList = (): ReactElement => {
+interface Props {
+  initDelay?: number
+}
+
+const SkillsList = ({ initDelay = 0 }: Props): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       {skills.map(({ id, logoSrc }, index) => {
-        return <Skill key={id} logoSrc={logoSrc} index={index} isSmall />;
+        return <Skill key={id} logoSrc={logoSrc} index={index} initDelay={initDelay} isSmall />;
       })}
     </div>
   );

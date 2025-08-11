@@ -1,0 +1,150 @@
+@reference "../../../../app/globals.css";
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nameAnimation {
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+}
+
+@keyframes positionAnimation {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes datesAnimations {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes dutyMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes framesAnimations {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contentAnimations {
+  100% {
+    background-color: hsl(270°, 32%, 9%);;
+  }
+}
+
+.wrapper {
+  @apply w-96 rounded-3xl;
+  @apply relative;
+  padding: 1px;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+.frames {
+  @apply absolute inset-0;
+  --gradient: linear-gradient(to bottom right, rgb(115, 115, 115) 0%, rgb(82, 82, 82) 34%, rgb(72, 72, 72) 68%, rgb(64, 64, 64));
+  --bg-size: calc(100% + 14px);
+
+  opacity: 0;
+  transform: translateX(-25px);
+
+  .show & {
+    animation: framesAnimations 1000ms ease-in-out forwards;
+  }
+
+  &::after {
+    content: "";
+    border: 3px solid rgba(0, 0, 0, 0);
+    mask: linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0)), linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 100%));
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+    position: absolute;
+    inset: 0;
+    background: var(--gradient) 50% / calc(100% + 14px) calc(100% + 14px);
+    @apply rounded-3xl;
+  }
+}
+
+.content {
+  @apply flex flex-col gap-4 items-start;
+  @apply rounded-3xl;
+  @apply p-8;
+  height: fit-content;
+
+  .show & {
+    animation: contentAnimations 1000ms ease-in-out forwards;
+  }
+}
+
+.name {
+  @apply text-2xl text-custom-4;
+  transform: translateX(-100px) rotateZ(-10deg);
+  opacity: 0;
+
+  .show & {
+    animation: nameAnimation 1000ms ease-in-out forwards;
+  }
+}
+
+.date {
+  @apply text-slate-500 text-base;
+  transform: translateX(-15px) translateY(25px);
+  opacity: 0;
+
+  .show & {
+    animation: datesAnimations 1000ms ease-in-out forwards;
+  }
+}
+
+.position {
+  @apply text-xl text-custom-3;
+  transform: translateX(-15px) translateY(25px);
+  opacity: 0;
+
+  .show & {
+    animation: positionAnimation 1000ms ease-in-out forwards;
+  }
+}
+
+.duty {
+  @apply text-lg text-custom-4;
+  @apply flex gap-4 items-baseline;
+  opacity: 0;
+  transform: translateX(-10px);
+
+  .show & {
+    animation: dutyMove 300ms ease-in-out forwards;
+  }
+}
+
+.listIcon {
+  @apply w-3 min-w-3;
+}

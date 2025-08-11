@@ -1,6 +1,6 @@
 import { ReactElement, useRef } from 'react';
 import { IExperienceItem } from '@/types/experience';
-import Company from '@/components/ExperienceItem/Company/Company';
+import AnimatedCompany from '@/components/ExperienceItem/AnimatedCompany/AnimatedCompany';
 
 import useIntersectionObserver from '@/hooks/UseIntersectionObserver';
 import styles from './ExperienceItem.module.scss';
@@ -19,8 +19,8 @@ const ExperienceItem = ({ item }: Props): ReactElement | null => {
   });
 
   return (
-    <div className={styles.wrapper} ref={itemRef}>
-      <Company item={item} isVisible={isVisible} />
+    <div className={styles.wrapper} ref={itemRef} data-test={isVisible}>
+      <AnimatedCompany item={item} isVisible={isVisible} />
     </div>
   );
 };

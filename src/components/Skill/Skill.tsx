@@ -12,6 +12,7 @@ interface Props {
   addImageBackground?: boolean;
   index: number;
   isSmall?: boolean;
+  initDelay?: number;
 }
 
 const Skill = ({
@@ -20,6 +21,7 @@ const Skill = ({
   addImageBackground,
   index,
   isSmall = false,
+  initDelay = 0,
 }: Props): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +50,7 @@ const Skill = ({
           {
             '--rotateX': xRotation,
             '--rotateY': yRotation,
-            'animation-delay': `${index * 100}ms`,
+            'animation-delay': `${(index * 100) + initDelay}ms`,
           } as CSSProperties
         }
       >

@@ -1,9 +1,8 @@
-import { ReactElement } from 'react';
-import { IExperienceItem } from '@/types/experience';
 import { GoDotFill } from 'react-icons/go';
+import { IExperienceItem } from '@/types/experience';
 import cx from 'classnames';
 
-import styles from './Company.module.scss';
+import styles from './AnimatedCompany.module.scss';
 
 interface Props {
   item: IExperienceItem;
@@ -11,17 +10,20 @@ interface Props {
   isVisible: boolean;
 }
 
-const Company = ({
+const AnimatedCompany = ({
   item: { name, position, duties, startDate, endDate },
   wrapperClass = '',
   isVisible,
-}: Props): ReactElement => {
+}: Props) => {
   const wrapperClasses = cx(styles.wrapper, wrapperClass, {
     [styles.show]: isVisible,
   });
+
+  const initDutyAnimationDelay = 500;
+
   return (
     <div className={wrapperClasses}>
-      <div className={styles.background} />
+      <div className={styles.frames} />
       <div className={styles.content}>
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.position}>{position}</p>
@@ -32,7 +34,7 @@ const Company = ({
               <li
                 className={styles.duty}
                 key={duty}
-                style={{ animationDelay: `${index * 300}ms` }}
+                style={{ animationDelay: `${(index * 300) + initDutyAnimationDelay}ms` }}
               >
                 <GoDotFill className={styles.listIcon} size={12} />
                 <span>{duty}</span>
@@ -45,4 +47,4 @@ const Company = ({
   );
 };
 
-export default Company;
+export default AnimatedCompany;

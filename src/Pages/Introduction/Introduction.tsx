@@ -1,18 +1,12 @@
 import { ReactElement, useRef } from 'react';
 import cx from 'classnames';
 import SkillsList from '@/components/SkillsList/SkillsList';
+import AnimatedFadeText from '@/components/animations/AnimatedFadeText';
 
 import styles from './Introduction.module.scss';
 
 const Introduction = (): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  // usePageObserver({ wrapperRef, pageHash: '#home' });
-
-  // useEffect(() => {
-  //   console.log('INTRODUCTION EFFECT');
-  //   console.log(wrapperRef);
-  // }, []);
 
   return (
     <div
@@ -24,10 +18,10 @@ const Introduction = (): ReactElement => {
         <div className={styles.box}>
           <div>
             <p className={styles.smallText}>Hello There!</p>
-            <p className={styles.mainText}>I am a Frontend Developer</p>
+            <AnimatedFadeText text="I am a Frontend Developer" classes={styles.mainText} />
           </div>
 
-          <SkillsList />
+          <SkillsList initDelay={1000} />
         </div>
       </div>
     </div>

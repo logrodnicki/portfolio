@@ -1,9 +1,16 @@
 @reference "../../../app/globals.css";
 
 .wrapper {
-  @apply py-8;
+  @apply py-8 relative;
 }
 
 .box {
   @apply my-16;
+}
+
+.hideCompany {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }

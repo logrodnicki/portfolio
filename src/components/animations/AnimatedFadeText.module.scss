@@ -1,0 +1,11 @@
+@keyframes fadeOut {
+  to {
+    opacity: 1;
+  }
+}
+
+.letter {
+  opacity: 0;
+  animation: fadeOut 150ms ease-in-out forwards;
+  color: white;
+}
