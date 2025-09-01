@@ -1,5 +1,5 @@
 import { ReactElement, useRef } from 'react';
-import Skill from '@/components/Skill/Skill';
+import Skill from '@/components/SkillsList/Skill/Skill';
 import usePageObserver from '@/hooks/UsePageObserver';
 
 import styles from './Skills.module.scss';

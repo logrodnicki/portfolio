@@ -1,5 +1,5 @@
 import { ReactElement, useRef } from 'react';
-import Skill from '@/components/Skill/Skill';
+import Skill from '@/components/SkillsList/Skill/Skill';
 
 import { skills } from '@/data/data';
 

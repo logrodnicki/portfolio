@@ -1,7 +1,7 @@
 import { ReactElement, useRef } from 'react';
 import cx from 'classnames';
 import SkillsList from '@/components/SkillsList/SkillsList';
-import AnimatedFadeText from '@/components/animations/AnimatedFadeText';
+import AnimatedFadeText from '@/components/Animations/AnimatedFadeText';
 
 import styles from './Introduction.module.scss';
 

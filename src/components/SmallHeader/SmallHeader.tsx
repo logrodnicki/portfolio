@@ -1,4 +1,4 @@
-import HeaderButton from '@/components/HeaderButton/HeaderButton';
+import HeaderButton from '@/components/Header/HeaderButton/HeaderButton';
 import styles from './SmallHeader.module.scss';
 
 const SmallHeader = () => {

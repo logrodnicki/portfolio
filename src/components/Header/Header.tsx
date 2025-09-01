@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import HeaderButton from '@/components/HeaderButton/HeaderButton';
+import HeaderButton from '@/components/Header/HeaderButton/HeaderButton';
 import styles from './Header.module.scss';
 
 const Header = (): ReactElement => {

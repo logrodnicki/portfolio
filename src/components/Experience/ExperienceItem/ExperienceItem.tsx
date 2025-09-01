@@ -1,6 +1,6 @@
 import { ReactElement, useRef } from 'react';
 import { IExperienceItem } from '@/types/experience';
-import AnimatedCompany from '@/components/ExperienceItem/AnimatedCompany/AnimatedCompany';
+import AnimatedCompany from '@/components/Experience/ExperienceItem/AnimatedCompany/AnimatedCompany';
 
 import useIntersectionObserver from '@/hooks/UseIntersectionObserver';
 import styles from './ExperienceItem.module.scss';
