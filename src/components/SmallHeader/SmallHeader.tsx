@@ -1,16 +1,22 @@
 import HeaderButton from '@/components/Header/HeaderButton/HeaderButton';
+import { NavButton } from '@/types/common';
 import styles from './SmallHeader.module.scss';
 
-const SmallHeader = () => {
+interface Props {
+  buttons: NavButton[];
+}
+
+const SmallHeader = ({ buttons }: Props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.background} />
         <div className={styles.content}>
-          <HeaderButton text="Home" href="#home" />
-          <HeaderButton text="Experience" href="#experience" />
-          <HeaderButton text="Projects" href="#projects" />
-          <HeaderButton text="Contact" href="#contact" />
+          { buttons.map(({ text, href }) => {
+            return (
+              <HeaderButton text={text} href={href} key={href} />
+            );
+          }) }
         </div>
       </div>
     </div>

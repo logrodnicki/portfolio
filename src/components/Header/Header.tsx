@@ -1,14 +1,20 @@
 import { ReactElement } from 'react';
 import HeaderButton from '@/components/Header/HeaderButton/HeaderButton';
+import { NavButton } from '@/types/common';
 import styles from './Header.module.scss';
 
-const Header = (): ReactElement => {
+interface Props {
+  buttons: NavButton[];
+}
+
+const Header = ({ buttons }: Props): ReactElement => {
   return (
     <nav className={styles.wrapper}>
-      <HeaderButton text="Home" href="#home" />
-      <HeaderButton text="Experience" href="#experience" />
-      <HeaderButton text="Projects" href="#projects" />
-      <HeaderButton text="Contact" href="#contact" />
+      {buttons.map(({ text, href }) => {
+        return (
+          <HeaderButton text={text} href={href} key={href} />
+        );
+      })}
     </nav>
   );
 };

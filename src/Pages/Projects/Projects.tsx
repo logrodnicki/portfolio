@@ -7,10 +7,8 @@ import styles from './Projects.module.scss';
 const Projects = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  // usePageObserver({ wrapperRef, pageHash: '#projects' });
-
   return (
-    <div className={styles.wrapper} ref={wrapperRef} data-page-hash="#projects">
+    <div className={styles.wrapper} ref={wrapperRef} data-page-hash="/projects">
       <Title text="Projects" />
       <div />
       <div className={styles.projects}>

@@ -5,14 +5,14 @@ import AnimatedFadeText from '@/components/Animations/AnimatedFadeText';
 
 import styles from './Introduction.module.scss';
 
-const Introduction = (): ReactElement => {
+const IntroductionPage = (): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
       className={cx(styles.wrapper)}
       ref={wrapperRef}
-      data-page-hash="#introduction"
+      data-page-hash="/"
     >
       <div className={styles.content}>
         <div className={styles.box}>
@@ -31,4 +31,4 @@ const Introduction = (): ReactElement => {
   );
 };
 
-export default Introduction;
+export default IntroductionPage;

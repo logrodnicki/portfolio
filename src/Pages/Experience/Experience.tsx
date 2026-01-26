@@ -1,7 +1,6 @@
 import { ReactElement, useRef } from 'react';
 import ExperienceItem from '@/components/Experience/ExperienceItem/ExperienceItem';
 import { experience } from '@/data/data';
-// import usePageObserver from '@/hooks/UsePageObserver';
 import Title from '@/components/Title/Title';
 import ExperienceTimeline from '@/components/Experience/ExperienceTimeline/ExperienceTimeline';
 import styles from './Experience.module.scss';
@@ -13,7 +12,7 @@ const Experience = (): ReactElement => {
     <div
       className={styles.wrapper}
       ref={wrapperRef}
-      data-page-hash="#experiences"
+      data-page-hash="/experiences"
     >
       <Title text="Experience" />
       <div />
