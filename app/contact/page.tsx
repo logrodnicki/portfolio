@@ -3,9 +3,7 @@
 import ContactPage from '@/Pages/Contact/Contact';
 
 const Contact = () => {
-  return (
-    <ContactPage />
-  );
+  return <ContactPage />;
 };
 
 export default Contact;

@@ -12,11 +12,9 @@ const SmallHeader = ({ buttons }: Props) => {
       <div className={styles.container}>
         <div className={styles.background} />
         <div className={styles.content}>
-          { buttons.map(({ text, href }) => {
-            return (
-              <HeaderButton text={text} href={href} key={href} />
-            );
-          }) }
+          {buttons.map(({ text, href }) => {
+            return <HeaderButton text={text} href={href} key={href} />;
+          })}
         </div>
       </div>
     </div>

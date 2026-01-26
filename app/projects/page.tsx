@@ -3,9 +3,7 @@
 import ProjectsPage from '@/Pages/Projects/Projects';
 
 const Projects = () => {
-  return (
-    <ProjectsPage />
-  );
+  return <ProjectsPage />;
 };
 
 export default Projects;

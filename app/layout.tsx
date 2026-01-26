@@ -42,9 +42,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <PagesContext.Provider value={pagesContextValue}>
           <Header buttons={navButtons} />
           <SmallHeader buttons={navButtons} />
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
         </PagesContext.Provider>
       </body>
     </html>

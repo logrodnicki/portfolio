@@ -9,11 +9,7 @@ const IntroductionPage = (): ReactElement => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      className={cx(styles.wrapper)}
-      ref={wrapperRef}
-      data-page-hash="/"
-    >
+    <div className={cx(styles.wrapper)} ref={wrapperRef} data-page-hash="/">
       <div className={styles.content}>
         <div className={styles.box}>
           <div>

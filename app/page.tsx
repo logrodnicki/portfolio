@@ -3,9 +3,7 @@
 import Introduction from '@/Pages/Introduction/Introduction';
 
 const HomePage = () => {
-  return (
-    <Introduction />
-  );
+  return <Introduction />;
 };
 
 export default HomePage;

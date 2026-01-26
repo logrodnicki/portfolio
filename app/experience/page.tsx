@@ -3,9 +3,7 @@
 import ExperiencePage from '@/Pages/Experience/Experience';
 
 const Experience = () => {
-  return (
-    <ExperiencePage />
-  );
+  return <ExperiencePage />;
 };
 
 export default Experience;
